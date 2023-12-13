@@ -1,5 +1,7 @@
 package christmas.view;
 
+import christmas.constant.XMasInfo;
+
 import java.text.DecimalFormat;
 import java.util.Map;
 
@@ -23,9 +25,14 @@ public class OutputView {
     }
 
     // 증정 메뉴 출력
-    public void printGift(String gift) {
+    public int printGift(int gift) {
         System.out.println("\n<증정 메뉴>");
-        System.out.println(gift);
+        if(gift > 0) {
+            System.out.println(XMasInfo.GIFT + " 1개");
+            return gift;
+        }
+        System.out.println("없음");
+        return 0;
     }
 
     // 혜택 내역 출력
@@ -34,9 +41,8 @@ public class OutputView {
     }
 
     // 혜택 디테일
-    public int eventDetail(String message, int money) {
+    public void eventDetail(String message, int money) {
         System.out.println(message + ": -" + money);
-        return money;
     }
 
     // 총 혜택 금액 출력

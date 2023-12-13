@@ -22,35 +22,35 @@ public class Event {
     }
 
     // 평일 할인
-    public int weekdaySale(int date, Map<String, Integer> order) {
+    public int weekdaySale(int date, Map<String, Integer> orders) {
         int count = 0;
         String day = dayNDate.returnDay(date);
         for (String weekday : XMasInfo.WEEKDAY) {
             if (day.equals(weekday)) {
-                count = sortMenu(order, XMasInfo.WEEKDAY_MENU);
+                count = sortMenu(orders, XMasInfo.WEEKDAY_MENU);
             }
         }
         return count * XMasInfo.WEEK_SALE;
     }
 
     // 주말 할인
-    public int weekendSale(int date, Map<String, Integer> order) {
+    public int weekendSale(int date, Map<String, Integer> orders) {
         int count = 0;
         String day = dayNDate.returnDay(date);
         for (String weekend : XMasInfo.WEEKEND) {
             if (day.equals(weekend)) {
-                count = sortMenu(order, XMasInfo.WEEKEND_MENU);
+                count = sortMenu(orders, XMasInfo.WEEKEND_MENU);
             }
         }
         return count * XMasInfo.WEEK_SALE;
     }
 
     // 해당 타입 메뉴 개수 세기
-    private int sortMenu(Map<String, Integer> order, String type) {
+    private int sortMenu(Map<String, Integer> orders, String type) {
         int count = 0;
         for (Menu menu : Menu.values()) {
-            if (menu.getTYPE().equals(type) && order.containsKey(menu.getNAME())) {
-                count += order.get(menu.getNAME());
+            if (menu.getTYPE().equals(type) && orders.containsKey(menu.getNAME())) {
+                count += orders.get(menu.getNAME());
             }
         }
         return count;
@@ -67,20 +67,20 @@ public class Event {
     }
 
     // 증정 이벤트 - 총 주문 금액 12만원 이상
-    public String gift(int totalAmount) {
+    public int gift(int totalAmount) {
         if (totalAmount >= XMasInfo.GIFT_SALE) {
-            return XMasInfo.GIFT + " 1개";
+            return Menu.valueOf(XMasInfo.GIFT).getMONEY();
         }
-        return "없음";
+        return 0;
     }
 
     // 이벤트 배지
-    public String badge(int saleAmount) {
-        if (saleAmount >= 20000) {
+    public String badge(int totalAmount) {
+        if (totalAmount >= 20000) {
             return "산타";
-        } else if (saleAmount >= 10000) {
+        } else if (totalAmount >= 10000) {
             return "트리";
-        } else if (saleAmount >= 5000) {
+        } else if (totalAmount >= 5000) {
             return "별";
         }
         return "없음";

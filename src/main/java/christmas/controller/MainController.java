@@ -5,6 +5,7 @@ import christmas.model.Event;
 import christmas.model.Judgement;
 import christmas.model.Result;
 import christmas.view.InputView;
+import christmas.view.OutputView;
 
 import java.util.Map;
 
@@ -13,6 +14,7 @@ public class MainController {
     Judgement judgement;
     Result result;
     Event event;
+    OutputView outputView;
 
     // 날짜 받기
     public void getDate() {
@@ -36,6 +38,8 @@ public class MainController {
             judgement.checkDrink(orders);
             result = new Result(orders);
             int totalAmount = result.totalAmount();
+            outputView.printMenu(orders);
+            outputView.printTotalAmount(totalAmount);
             applySale(date, orders, totalAmount);
         } catch (IllegalArgumentException e) {
             System.out.println("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
@@ -43,8 +47,30 @@ public class MainController {
         }
     }
 
-    // 할인 적용하기
+    // 이벤트 내역 적용하기
     public void applySale(int date, Map<String, Integer> orders, int totalAmount) {
+        int totalSale = 0;
+        int gift = outputView.printGift(event.gift(totalAmount));
+        outputView.printEvent();
+        totalSale += judgeSale("크리스마스 디데이 할인", event.xMas(date));
+        totalSale += judgeSale("평일 할인", event.weekdaySale(date, orders));
+        totalSale += judgeSale("주말 할인", event.weekendSale(date, orders));
+        totalSale += judgeSale("특별 할인", event.specialSale(date));
+        totalSale += judgeSale("증정 이벤트", gift);
+        result.totalSale(totalSale);
+        if(totalSale == 0) {
+            System.out.println("없음");
+        }
+        outputView.printTotalSale(totalSale);
+        outputView.printFinalAmount(totalAmount, totalSale);
+        outputView.printBadge(event.badge(totalAmount));
+    }
 
+    // 할인 내역이 있으면 출력하기
+    public int judgeSale(String message, int saleAmount) {
+        if(saleAmount > 0) {
+            outputView.eventDetail(message, saleAmount);
+        }
+        return saleAmount;
     }
 }

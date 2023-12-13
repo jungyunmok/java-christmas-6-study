@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class Result {
     private final Map<String, Integer> orders;
-    private int totalSale = 0;
+    private int totalSale;
 
     public Result(Map<String, Integer> orders) {
         this.orders = orders;
@@ -27,6 +27,6 @@ public class Result {
 
     // 총 혜택 금액
     public void totalSale(int sale) {
-        totalSale += sale;
+        totalSale = sale;
     }
 }
