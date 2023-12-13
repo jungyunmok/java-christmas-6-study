@@ -40,12 +40,12 @@
   - [x] 문자열을 인트로 변환하며 exception 잡기 - Judgement#checkInt()
   - [x] 숫자 입력 범위 확인 - Judgement#checkRange()
   - [x] 메뉴-개수를 map에 담으며 중복 확인 - Judgement#checkDuplication()
-  - [ ] 존재하는 메뉴인지 확인 - Judgement#checkMenu()
-  - [ ] 음료만 주문 시 주문 불가 - Judgement#checkDrink()
-    - [ ] 안내 메시지
+  - [x] 존재하는 메뉴인지 확인 - Judgement#checkMenu()
+  - [x] 음료만 주문 시 주문 불가 - Judgement#checkDrink()
+    - [x] 안내 메시지
   - [ ] 총주문 금액 10,000원 이상부터 이벤트 적용됨
     - [ ] 안내 메시지
-  - [ ] 메뉴는 최대 20개까지만 주문 가능
+  - [ ] 메뉴는 최대 20개까지만 주문 가능 - Judgement#checkCount()
     - [ ] 안내 메시지
   - [ ] 잘못된 값을 입력시
     - [ ] IllegalArgumentException를 발생, 에러 메시지를 출력, 해당 부분부터 다시 입력받기

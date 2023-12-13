@@ -53,4 +53,14 @@ public class Judgement {
             throw new IllegalArgumentException();
         }
     }
+
+    // 음료만 주문 시 주문 불가
+    public void checkDrink(Map<String, Integer> orders) {
+        for(String key : orders.keySet()) {
+            if(Menu.valueOf(key).getTYPE().equals("음료")) {
+                System.out.println("[ERROR] 음료만 주문할 수 없습니다.");
+                throw new IllegalArgumentException();
+            }
+        }
+    }
 }
