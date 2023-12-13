@@ -5,6 +5,8 @@ public class XMasInfo {
     public static final String[] DAYS = {"일", "월", "화", "수", "목", "금", "토"};
     // 이번달 시작 요일
     public static final String START_DAY = "금";
+    // 이번달 마지막 날짜
+    public static final int END_DATE = 31;
     // 평일
     public static final String[] WEEKDAY = {"일", "월", "화", "수", "목"};
     // 주말
