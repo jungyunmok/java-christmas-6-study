@@ -4,6 +4,8 @@ import java.text.DecimalFormat;
 import java.util.Map;
 
 public class OutputView {
+    DecimalFormat df = new DecimalFormat("###,###");
+
     // 주문 메뉴 출력
     public void printMenu(Map<String, Integer> orders) {
         System.out.println("12월 3일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!");
@@ -16,8 +18,42 @@ public class OutputView {
 
     // 할인 전 총 주문 금액 출력
     public void printTotalAmount(int totalAmount) {
-        DecimalFormat df = new DecimalFormat("###,###");
         System.out.println("\n<할인 전 총주문 금액>");
         System.out.println(df.format(totalAmount) + "원");
+    }
+
+    // 증정 메뉴 출력
+    public void printGift(String gift) {
+        System.out.println("\n<증정 메뉴>");
+        System.out.println(gift);
+    }
+
+    // 혜택 내역 출력
+    public void printEvent() {
+        System.out.println("\n<혜택 내역>");
+    }
+
+    // 혜택 디테일
+    public int eventDetail(String message, int money) {
+        System.out.println(message + ": -" + money);
+        return money;
+    }
+
+    // 총 혜택 금액 출력
+    public void printTotalSale(int totalSale) {
+        System.out.println("\n<총혜택 금액>");
+        System.out.println("-" + df.format(totalSale) + "원");
+    }
+
+    // 할인 후 예상 결제 금액 출력
+    public void printFinalAmount(int totalAmount, int totalSale) {
+        System.out.println("\n<할인 후 예상 결제 금액>");
+        System.out.println(df.format(totalAmount - totalSale) + "원");
+    }
+
+    // 배지 출력
+    public void printBadge(String badge) {
+        System.out.println("\n<12월 이벤트 배지>");
+        System.out.println(badge);
     }
 }

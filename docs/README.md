@@ -72,9 +72,9 @@
 - [x] 할인 전 총주문 금액 출력 - OutputView#printTotalAmount()
 - [ ] 증정 메뉴 출력 - OutputView#printGift()
   - [x] 해당하지 않는 경우, "없음" 출력
-- [ ] 혜택 내역 출력 - OutputView#printEvent()
+- [x] 혜택 내역 출력 - OutputView#printEvent()
   - [ ] 해당하지 않는 경우, "없음" 출력
-- [ ] 총혜택 금액 출력 (총혜택 금액 = 할인 금액의 합계 + 증정 메뉴의 가격) - OutputView#printSale()
-- [ ] 할인 후 예상 결제 금액 (할인 후 예상 결제 금액 = 할인 전 총주문 금액 - 할인 금액) - OutputView#printFinalAmount()
-- [ ] 12월 이벤트 배지 출력 - OutputView#printBadge
+- [x] 총혜택 금액 출력 (총혜택 금액 = 할인 금액의 합계 + 증정 메뉴의 가격) - OutputView#printTotalSale()
+- [x] 할인 후 예상 결제 금액 (할인 후 예상 결제 금액 = 할인 전 총주문 금액 - 할인 금액) - OutputView#printFinalAmount()
+- [x] 12월 이벤트 배지 출력 - OutputView#printBadge
   - [x] 해당하지 않는 경우, "없음" 출력
