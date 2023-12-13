@@ -69,7 +69,7 @@
 
 ## 출력
 - [x] 주문 메뉴 출력 - OutputView#printMenu()
-- [ ] 할인 전 총주문 금액 출력 - OutputView#printTotalAmount()
+- [x] 할인 전 총주문 금액 출력 - OutputView#printTotalAmount()
 - [ ] 증정 메뉴 출력 - OutputView#printGift()
   - [x] 해당하지 않는 경우, "없음" 출력
 - [ ] 혜택 내역 출력 - OutputView#printEvent()
