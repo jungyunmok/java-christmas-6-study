@@ -13,4 +13,10 @@ public class XMasInfo {
     public static final String WEEKDAY_MENU = "디저트";
     // 주말 할인 적용 메뉴
     public static final String WEEKEND_MENU = "메인";
+    // 평일, 주말 할인 금액
+    public static final int WEEK_SALE = 2023;
+    // 특별 할인 날짜 - 별 있는 날짜
+    public static final int[] STAR_DATE = {3, 10, 17, 24, 25, 31};
+    // 특별 할인 금액
+    public static final int STAR_SALE = 1000;
 }

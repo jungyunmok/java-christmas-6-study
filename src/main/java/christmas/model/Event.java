@@ -30,7 +30,7 @@ public class Event {
                 sale = sortMenu(order, XMasInfo.WEEKDAY_MENU);
             }
         }
-        return sale * 2023;
+        return sale * XMasInfo.WEEK_SALE;
     }
 
     // 주말 할인
@@ -42,7 +42,7 @@ public class Event {
                 sale = sortMenu(order, XMasInfo.WEEKEND_MENU);
             }
         }
-        return sale * 2023;
+        return sale * XMasInfo.WEEK_SALE;
     }
 
     // 해당 타입 메뉴 개수 세기
@@ -54,5 +54,16 @@ public class Event {
             }
         }
         return count;
+    }
+
+    // 별이 있는 날짜 특별 할인
+    public int specialSale(int date) {
+        int sale = 0;
+        for(int starDate : XMasInfo.STAR_DATE) {
+            if(date == starDate) {
+                sale = XMasInfo.STAR_SALE;
+            }
+        }
+        return sale;
     }
 }
