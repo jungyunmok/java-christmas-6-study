@@ -1,5 +1,7 @@
 package christmas.model;
 
+import christmas.constant.Menu;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,5 +38,19 @@ public class Judgement {
             orders.put(key, value);
         }
         return orders;
+    }
+
+    // 존재하는 메뉴인지 확인
+    public void checkMenu(Map<String, Integer> orders) {
+        int count = 0;
+        for(Menu menu : Menu.values()) {
+            if(orders.containsKey(menu.getNAME())) {
+                count++;
+            }
+        }
+        if(count != orders.size()) {
+            System.out.println("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
+            throw new IllegalArgumentException();
+        }
     }
 }
