@@ -32,7 +32,6 @@ public class Judgement {
             String key = str.split("-")[0];
             int value = checkInt(str.split("-")[1]);
             if (orders.containsKey(key)) {
-                System.out.println("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
                 throw new IllegalArgumentException();
             }
             orders.put(key, value);
@@ -51,7 +50,6 @@ public class Judgement {
             }
         }
         if (count != orders.size()) {
-            System.out.println("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
             throw new IllegalArgumentException();
         }
         checkCount(totalCount);
@@ -78,5 +76,4 @@ public class Judgement {
             throw new IllegalArgumentException();
         }
     }
-
 }
