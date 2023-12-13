@@ -45,8 +45,8 @@
     - [x] 안내 메시지
   - [x] 음료만 주문 시 주문 불가 - Judgement#checkDrink()
     - [x] 안내 메시지
-  - [ ] 총주문 금액 10,000원 이상부터 이벤트 적용됨
-    - [ ] 안내 메시지
+  - [x] 총주문 금액 10,000원 이상부터 이벤트 적용됨
+    - [x] 안내 메시지
   - [x] 잘못된 값을 입력시
     - [x] IllegalArgumentException를 발생, 에러 메시지를 출력, 해당 부분부터 다시 입력받기
   - [x] 유효하지 않은 날짜 입력시
@@ -68,7 +68,7 @@
   - [ ] 메뉴 개수는 1 이상의 숫자만 입력
 
 ## 출력
-- [ ] 주문 메뉴 출력 - OutputView#printMenu()
+- [x] 주문 메뉴 출력 - OutputView#printMenu()
 - [ ] 할인 전 총주문 금액 출력 - OutputView#printTotalAmount()
 - [ ] 증정 메뉴 출력 - OutputView#printGift()
   - [x] 해당하지 않는 경우, "없음" 출력
