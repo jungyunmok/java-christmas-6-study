@@ -25,6 +25,6 @@ public class XMasInfo {
     public static final int GIFT_SALE = 120000;
     // 증정 이벤트 물품
     public static final String GIFT = "샴페인";
-    // 증정 이벤트 물품 가
+    // 증정 이벤트 물품 가격
     public static final int GIFT_PRICE = 25000;
 }
