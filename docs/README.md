@@ -21,10 +21,10 @@
   - [x] 매일 100원씩 증가하여 25일엔 총 3,400원 할인
   - [ ] 총주문 금액에서 할인
 - [ ] 12월 할인
-  - [ ] 평일 할인 - Event#weekdaySale()
-    - [ ] 일~목요일엔 디저트 메뉴를 1개당 2,023원 할인
-  - [ ] 주말 할인 - Event#weekendSale()
-    - [ ] 금, 토요일엔 메인 메뉴를 1개당 2,023원 할인
+  - [x] 평일 할인 - Event#weekdaySale()
+    - [x] 일~목요일엔 디저트 메뉴를 1개당 2,023원 할인 - Event#sortMenu
+  - [x] 주말 할인 - Event#weekendSale()
+    - [x] 금, 토요일엔 메인 메뉴를 1개당 2,023원 할인 - Event#sortMenu
   - [ ]특별 할인 - Event#specialSale()
     - [ ] 이벤트 달력에 별이 있는 날(3,10,17,24,25,31) 총주문 금액에서 1,000원 할인
   - [ ] 증정 이벤트 - Event#gift()
@@ -34,7 +34,7 @@
   - [ ] 5천 원 이상: 별 
   - [ ] 1만 원 이상: 트리 
   - [ ] 2만 원 이상: 산타
-- [x] 날짜 요일 변환 - Date#transferDate()
+- [x] 날짜 요일 변환 - DayNDate#returnDay()
 - [ ] 예외처리
   - [ ] 모든 에러 메시지는 "[ERROR]"로 시작
   - [ ] 문자열을 인트로 변환하며 exception 잡기 - Judgement#checkInt()
