@@ -1,6 +1,7 @@
 package christmas.controller;
 
 import christmas.constant.XMasInfo;
+import christmas.model.DayNDate;
 import christmas.model.Event;
 import christmas.model.Judgement;
 import christmas.model.Result;
@@ -13,8 +14,17 @@ public class MainController {
     InputView inputView;
     Judgement judgement;
     Result result;
+    DayNDate dayNDate;
     Event event;
     OutputView outputView;
+
+    public MainController() {
+        inputView = new InputView();
+        judgement = new Judgement();
+        dayNDate = new DayNDate();
+        event = new Event(dayNDate);
+        outputView = new OutputView();
+    }
 
     // 날짜 받기
     public void getDate() {
@@ -58,17 +68,17 @@ public class MainController {
         totalSale += judgeSale("특별 할인", event.specialSale(date));
         totalSale += judgeSale("증정 이벤트", gift);
         result.totalSale(totalSale);
-        if(totalSale == 0) {
+        if (totalSale == 0) {
             System.out.println("없음");
         }
         outputView.printTotalSale(totalSale);
-        outputView.printFinalAmount(totalAmount, totalSale);
-        outputView.printBadge(event.badge(totalAmount));
+        outputView.printFinalAmount(totalAmount, totalSale - gift);
+        outputView.printBadge(event.badge(totalSale));
     }
 
     // 할인 내역이 있으면 출력하기
     public int judgeSale(String message, int saleAmount) {
-        if(saleAmount > 0) {
+        if (saleAmount > 0) {
             outputView.eventDetail(message, saleAmount);
         }
         return saleAmount;

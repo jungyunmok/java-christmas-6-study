@@ -67,13 +67,22 @@ public class Judgement {
     public void checkDrink(Map<String, Integer> orders) {
         int drinkCount = 0;
         for (String key : orders.keySet()) {
-            if (Menu.valueOf(key).getTYPE().equals("음료")) {
-                drinkCount++;
-            }
+            drinkCount += judgeDrink(key);
         }
         if (drinkCount == orders.size()) {
             System.out.println("[ERROR] 음료만 주문할 수 없습니다.");
             throw new IllegalArgumentException();
         }
+    }
+
+    // 메뉴에서 음료 찾아서 주문내역에 있으면 개수 반환
+    public int judgeDrink(String key) {
+        int count = 0;
+        for (Menu menu : Menu.values()) {
+            if (menu.getTYPE().equals("음료") && menu.getNAME().equals(key)) {
+                count++;
+            }
+        }
+        return count;
     }
 }

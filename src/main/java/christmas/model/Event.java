@@ -69,18 +69,18 @@ public class Event {
     // 증정 이벤트 - 총 주문 금액 12만원 이상
     public int gift(int totalAmount) {
         if (totalAmount >= XMasInfo.GIFT_SALE) {
-            return Menu.valueOf(XMasInfo.GIFT).getMONEY();
+            return XMasInfo.GIFT_PRICE;
         }
         return 0;
     }
 
     // 이벤트 배지
-    public String badge(int totalAmount) {
-        if (totalAmount >= 20000) {
+    public String badge(int totalSale) {
+        if (totalSale >= 20000) {
             return "산타";
-        } else if (totalAmount >= 10000) {
+        } else if (totalSale >= 10000) {
             return "트리";
-        } else if (totalAmount >= 5000) {
+        } else if (totalSale >= 5000) {
             return "별";
         }
         return "없음";

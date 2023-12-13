@@ -27,7 +27,7 @@ public class OutputView {
     // 증정 메뉴 출력
     public int printGift(int gift) {
         System.out.println("\n<증정 메뉴>");
-        if(gift > 0) {
+        if (gift > 0) {
             System.out.println(XMasInfo.GIFT + " 1개");
             return gift;
         }
@@ -42,13 +42,16 @@ public class OutputView {
 
     // 혜택 디테일
     public void eventDetail(String message, int money) {
-        System.out.println(message + ": -" + money);
+        System.out.println(message + ": -" + df.format(money) + "원");
     }
 
     // 총 혜택 금액 출력
     public void printTotalSale(int totalSale) {
         System.out.println("\n<총혜택 금액>");
-        System.out.println("-" + df.format(totalSale) + "원");
+        if (totalSale > 0) {
+            System.out.print("-");
+        }
+        System.out.println(df.format(totalSale) + "원");
     }
 
     // 할인 후 예상 결제 금액 출력
