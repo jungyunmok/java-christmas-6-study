@@ -20,15 +20,15 @@
   - [x] 할인 금액 1,000원부터 시작
   - [x] 매일 100원씩 증가하여 25일엔 총 3,400원 할인
   - [ ] 총주문 금액에서 할인
-- [ ] 12월 할인
+- [x] 12월 할인
   - [x] 평일 할인 - Event#weekdaySale()
     - [x] 일~목요일엔 디저트 메뉴를 1개당 2,023원 할인 - Event#sortMenu
   - [x] 주말 할인 - Event#weekendSale()
     - [x] 금, 토요일엔 메인 메뉴를 1개당 2,023원 할인 - Event#sortMenu
-  - [x]특별 할인 - Event#specialSale()
+  - [x] 특별 할인 - Event#specialSale()
     - [x] 이벤트 달력에 별이 있는 날(3,10,17,24,25,31) 총주문 금액에서 1,000원 할인
-  - [ ] 증정 이벤트 - Event#gift()
-    - [ ] 할인 전 총주문 금액에 12만원 이상일 때 샴페인 1개(25,000원) 증정
+  - [x] 증정 이벤트 - Event#gift()
+    - [x] 할인 전 총주문 금액에 12만원 이상일 때 샴페인 1개(25,000원) 증정
 - [ ] 12월 이벤트 배지 - Event#badge()
   - [ ] 총 혜택 금액에 따라 이벤트 배지 부여
   - [ ] 5천 원 이상: 별 
@@ -72,10 +72,10 @@
 - [ ] 주문 메뉴 출력 - OutputView#printMenu()
 - [ ] 할인 전 총주문 금액 출력 - OutputView#printTotalAmount()
 - [ ] 증정 메뉴 출력 - OutputView#printGift()
-  - [ ] 해당하지 않는 경우, "없음" 출력
+  - [x] 해당하지 않는 경우, "없음" 출력
 - [ ] 혜택 내역 출력 - OutputView#printEvent()
   - [ ] 해당하지 않는 경우, "없음" 출력
 - [ ] 총혜택 금액 출력 (총혜택 금액 = 할인 금액의 합계 + 증정 메뉴의 가격) - OutputView#printSale()
 - [ ] 할인 후 예상 결제 금액 (할인 후 예상 결제 금액 = 할인 전 총주문 금액 - 할인 금액) - OutputView#printFinalAmount()
 - [ ] 12월 이벤트 배지 출력 - OutputView#printBadge
-  - [ ] 해당하지 않는 경우, "없음" 출력
+  - [x] 해당하지 않는 경우, "없음" 출력
