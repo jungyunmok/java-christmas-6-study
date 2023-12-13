@@ -19,4 +19,8 @@ public class XMasInfo {
     public static final int[] STAR_DATE = {3, 10, 17, 24, 25, 31};
     // 특별 할인 금액
     public static final int STAR_SALE = 1000;
+    // 증정 이벤트 충족 금액
+    public static final int GIFT_SALE = 120000;
+    // 증정 이벤트 물품
+    public static final String GIFT = "샴페인";
 }

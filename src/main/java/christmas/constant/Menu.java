@@ -12,7 +12,7 @@ public enum Menu {
     DS2("디저트","아이스크림", 5000),
     DR1("음료","제로콜라", 3000),
     DR2("음료","레드와인", 60000),
-    DR3("음료","샴페인25000", 3000);
+    DR3("음료","샴페인", 25000);
 
     private final String TYPE;
     private final String NAME;

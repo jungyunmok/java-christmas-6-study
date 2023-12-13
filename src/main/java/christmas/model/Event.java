@@ -66,4 +66,13 @@ public class Event {
         }
         return sale;
     }
+
+    // 증정 이벤트 - 총 주문 금액 12만원 이상
+    public int gift(int totalAmount) {
+        int sale = 0;
+        if(totalAmount >= XMasInfo.GIFT_SALE) {
+            sale = Menu.valueOf(XMasInfo.GIFT).getMONEY();
+        }
+        return sale;
+    }
 }
