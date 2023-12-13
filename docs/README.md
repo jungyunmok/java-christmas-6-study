@@ -31,13 +31,13 @@
     - [x] 할인 전 총주문 금액에 12만원 이상일 때 샴페인 1개(25,000원) 증정
 - [ ] 12월 이벤트 배지 - Event#badge()
   - [ ] 총 혜택 금액에 따라 이벤트 배지 부여
-  - [ ] 5천 원 이상: 별 
-  - [ ] 1만 원 이상: 트리 
-  - [ ] 2만 원 이상: 산타
+  - [x] 5천 원 이상: 별 
+  - [x] 1만 원 이상: 트리 
+  - [x] 2만 원 이상: 산타
 - [x] 날짜 요일 변환 - DayNDate#returnDay()
 - [ ] 예외처리
   - [ ] 모든 에러 메시지는 "[ERROR]"로 시작
-  - [ ] 문자열을 인트로 변환하며 exception 잡기 - Judgement#checkInt()
+  - [x] 문자열을 인트로 변환하며 exception 잡기 - Judgement#checkInt()
   - [ ] 메뉴-개수를 map에 담으며 중복 확인 - Judgement#checkMenu()
   - [ ] 음료만 주문 시 주문 불가 - Judgement#checkDrink()
     - [ ] 안내 메시지
