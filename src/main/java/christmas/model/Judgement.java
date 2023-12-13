@@ -12,4 +12,11 @@ public class Judgement {
         }
         return number;
     }
+
+    // 숫자 입력 범위 확인
+    public void checkRange(int max, int number) {
+        if(number < 1 || number > max) {
+            throw new IllegalArgumentException();
+        }
+    }
 }
