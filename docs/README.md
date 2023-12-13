@@ -34,6 +34,7 @@
   - [ ] 5천 원 이상: 별 
   - [ ] 1만 원 이상: 트리 
   - [ ] 2만 원 이상: 산타
+- [x] 날짜 요일 변환 - Date#transferDate()
 - [ ] 예외처리
   - [ ] 모든 에러 메시지는 "[ERROR]"로 시작
   - [ ] 문자열을 인트로 변환하며 exception 잡기 - Judgement#checkInt()
