@@ -29,14 +29,23 @@ public class Judgement {
         Map<String, Integer> orders = new HashMap<>();
         String[] tempOrder = order.split(",");
         for (String str : tempOrder) {
-            String key = str.split("-")[0];
-            int value = checkInt(str.split("-")[1]);
+            arrayException(str, orders);
+        }
+        return orders;
+    }
+
+    // 배열 예외처리
+    public void arrayException(String eachOrder, Map<String, Integer> orders) {
+        try {
+            String key = eachOrder.split("-")[0];
+            int value = checkInt(eachOrder.split("-")[1]);
             if (orders.containsKey(key)) {
                 throw new IllegalArgumentException();
             }
             orders.put(key, value);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            throw new IllegalArgumentException();
         }
-        return orders;
     }
 
     // 존재하는 메뉴인지 확인
