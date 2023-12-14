@@ -12,8 +12,8 @@ public class Result {
         this.orders = orders;
     }
 
-    public int getTotalSale() {
-        return totalSale;
+    public Map<String, Integer> getOrders() {
+        return orders;
     }
 
     // 총 주문 금액 산출

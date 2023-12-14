@@ -30,7 +30,8 @@ public class MainController {
     // 주문 시작
     public void startOrder() {
         int date = getDate();
-        Map<String, Integer> orders = getOrder(date);
+        getOrder();
+        Map<String, Integer> orders = result.getOrders();
         int totalAmount = getAmount(orders);
         applySale(date, orders, totalAmount);
     }
@@ -50,19 +51,17 @@ public class MainController {
     }
 
     // 주문 받기
-    public Map<String, Integer> getOrder(int date) {
-        Map<String, Integer> orders = new HashMap<>();
+    public void getOrder() {
         try {
             String order = inputView.readMenu();
-            orders = judgement.checkDuplication(order);
+            Map<String, Integer> orders = judgement.arrayException(order);
             judgement.checkMenu(orders);
             judgement.checkDrink(orders);
             result = new Result(orders);
         } catch (IllegalArgumentException e) {
             System.out.println("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
-            getOrder(date);
+            getOrder();
         }
-        return orders;
     }
 
     // 총 금액 산출하기
